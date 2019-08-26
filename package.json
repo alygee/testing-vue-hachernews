@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "cross-env VUE_CLI_BABEL_TRANSPILE_MODULES=true VUE_CLI_BABEL_TARGET_NODE=true jest",
+    "test:unit:debug": "cross-env VUE_CLI_BABEL_TRANSPILE_MODULES=true VUE_CLI_BABEL_TARGET_NODE=true node --inspect-brk jest"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -21,6 +24,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.9.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "jest": "^24.9.0",
